@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+
+<h3>获得颜色</h3>
+
+<div class="submsg">
+<h4><i>string</i> getcolor( <i>string</i> image，<i>string</i> color )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> image</th>
+	<td>图片</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> color</th>
+	<td>颜色</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	图片颜色
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数获得颜色</p>
+</div>
+
+
+
+
+<h3>生成杂点</h3>
+
+<div class="submsg">
+<h4><i>string</i> setnoise( <i>string</i> image，<i>string</i> width，<i>string</i> height，<i>string</i> back，<i>string</i> noisenum )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> image</th>
+	<td>图片</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> width</th>
+	<td>宽度</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> height</th>
+	<td>高度</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> back</th>
+	<td>返回</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> noisenum</th>
+	<td>杂点</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数缓存查询至JavaScript</p>
+</div>
+
+
+
+<h3>缓存多条数据记录</h3>
+
+<div class="submsg">
+<h4><i>string</i> multi( <i>string</i> appid，<i>string</i> sql，<i>string</i> file，<i>array</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>缓存名称</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> option</th>
+	<td>配置选项</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	写入缓存
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>函数用于缓存多条数据记录</p>
+</div>
+
+
+
+<h3>缓存整张数据表</h3>
+
+<div class="submsg">
+<h4><i>string</i> table( <i>string</i> appid，<i>string</i> table，<i>array</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> table</th>
+	<td>表名</td>
+	</tr>
+</tbody>
+
+<tbody>
+	<tr>
+	<th><i>string</i> option</th>
+	<td>配置选项</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>函数用于缓存整张数据表</p>
+</div>
+
+
+
+
+
+<h3>格式化数据集</h3>
+
+<div class="submsg">
+<h4><i>string</i> format( <i>string</i> row，<i>string</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> row</th>
+	<td>数据行</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> option</th>
+	<td>配置选项</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	cache
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>函数用于格式化数据集</p>
+</div>
+
+
+
+
+
+<h3>缓存页面查询</h3>
+
+<div class="submsg">
+<h4><i>string</i> format( <i>string</i> sql，<i>string</i> time，<i>string</i> temp，<i>bool</i> debug )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> time</th>
+	<td>配置选项</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> temp</th>
+	<td>缓存有效期，分钟</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>bool</i> 调试模式</th>
+	<td></td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	cache
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>函数用于缓存页面查询</p>
+</div>
+
+
+
+
+
+<h3>生成表单结构缓存</h3>
+
+<div class="submsg">
+<h4><i>string</i> format( <i>string</i> appid，<i>string</i> list  )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> list</th>
+	<td>列表</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> temp</th>
+	<td>缓存有效期，分钟</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>bool</i> 调试模式</th>
+	<td></td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>函数用于生成表单结构缓存</p>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

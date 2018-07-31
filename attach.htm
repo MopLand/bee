@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>上传文件检测</h3>
+
+<div class="submsg">
+<h4><i>array</i> Attach :: checkfile ( <i>string</i> filename[, <i>string</i> filetype] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>文件名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>
+	扩展名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于检测是上传文件的扩展名</p>
+
+</div>
+
+
+<h3>单文件上传</h3>
+<div class="submsg">
+<h4><i>string</i> Attach :: savefile ( <i>array</i> param )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable" id="cptable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> field</th>
+	<td>文件域名称，默认为 file</td>
+	</tr>
+	<tr>
+	<th><i>string</i> model</th>
+	<td>
+    <em>normal:</em>普通上传，默认值<br />
+	<em>flash:</em>Flash 组件上传
+    </td>
+	</tr>
+    <tr>
+	<th><i>array</i> crop</th>
+	<td>裁切尺寸，如：array( 75, 100 )</td>
+	</tr>
+    <tr>
+	<th><i>array</i> thumb</th>
+	<td>缩略图尺寸，如：array( 150, 200 )</td>
+	</tr>
+    <tr>
+	<th><i>array</i> group</th>
+	<td>组件尺寸，如：array( '150*200', '300*400' )</td>
+	</tr>
+    <tr>
+	<th><i>integer</i> index</th>
+	<td>
+    <em>-1:</em>单文件上传，默认值<br />
+	<em>（>-1）:</em>多文件上传
+    </td>
+	</tr>
+    <tr>
+	<th><i>boolean</i> absolute</th>
+	<td>
+    <em>TRUE:</em>返回文件相对地址<br />
+	<em>FALSE:</em>返回文件绝对地址，默认值
+    </td>
+	</tr>
+    <tr>
+	<th><i>string</i> account</th>
+	<td>
+    <em>manager:</em>使用系统用户权限验证，默认值<br />
+	<em>member:</em>使用普通用户权限验证
+    </td>
+	</tr>
+    <tr>
+	<th><i>string</i> filetype</th>
+	<td>允许的文件类型，默认为 *（全部）</td>
+	</tr>
+    <tr>
+	<th><i>boolean</i> remote</th>
+	<td>
+    <em>TRUE:</em>使用远程存储<br />
+	<em>FALSE:</em>不使用远程存储，默认值
+    </td>
+	</tr>
+    <tr>
+	<th><i>string</i> watermark</th>
+	<td>水印图片地址</td>
+	</tr>
+    <tr>
+	<th><i>string</i> position</th>
+	<td>水印位置，默认为当前系统设置</td>
+	</tr>
+    <tr>
+	<th><i>string</i> multiple</th>
+	<td>原图是水印图尺寸的几倍时打上水印</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	保存的文件名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于将图片进行上传，并保存文件名</p>
+
+<div class="code"><pre>
+$file = Attach :: savefile( array( 'field' => 'file' ) );
+
+var_dump( $file );
+</pre></div>
+
+</div>
+
+
+<h3>多文件上传</h3>
+<div class="submsg">
+<h4><i>string</i> Attach :: savemulti ( <i>array</i> param )</h4>
+
+<h5>函数参数</h5>
+
+<script type="text/javascript"> document.write( document.getElementById('cptable').outerHTML ); </script>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>
+	保存的文件列表
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="code"><pre>
+$file = Attach :: savefile( array( 'field' => 'file' ) );
+
+var_dump( $file );
+</pre></div>
+</div>
+
+
+<h3>删除上传附件</h3>
+<div class="submsg">
+<h4><i>integer</i> Attach :: delete( <i>string</i> file )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>删除的文件名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+  	true为删除成功，false为失败
+	</td>
+	</tr>
+</tbody>
+</table>
+<p>本接口函数用于删除文件，并将数据库中的这条数据删除</p>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

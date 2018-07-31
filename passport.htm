@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+
+<h3>用户状态检查</h3>
+
+<div class="submsg">
+<h4><i>void</i> Passport :: check( <i>bool</i> login , <i>bool</i> profile , <i>bool</i> lock )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i> login</th>
+	<td>是否要求登录</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> profile</th>
+	<td>是否要求更新用户资料</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> lock</th>
+	<td>是否锁定背景</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于用户状态检查，如果登录成功的话，会注册ID为 Member 的 SESSION 变量 来存放会员信息</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's1')">用户状态检查示例 (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+//检查用户状态
+echo Passport :: check( true, true );
+
+//遍历会话
+var_dump( $_SESSION["Member"] );
+</pre></div>
+
+</div>
+
+
+
+<h3>用户登录</h3>
+
+<div class="submsg">
+<h4><i>integer</i> Passport :: login( <i>string</i> username , <i>string</i> password )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>用户名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> password</th>
+	<td>密码，MD5 之后的结果</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>0:</em>没有错误，顺利登录<br />
+	<em>1:</em>用户名或密码错误<br />
+	<em>2:</em>密码错误<br />
+	<em>3:</em>用户不存在<br />
+	<em>4:</em>不能复制当前用户数据<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于检查用户提交的登录请求，如果未通过验证，则返回对应错误的编号</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's2')">用户登录验证示例 (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+//用户登录
+echo Passport :: login( 'admin', md5( 'password' ) );
+
+//遍历会话
+var_dump( $_SESSION["Member"] );
+</pre></div>
+
+</div>
+
+
+
+<h3>用户退出</h3>
+
+<div class="submsg">
+<h4><i>integer</i> Passport :: logout()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>0:</em>退出成功<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于用户退出，退出成功后会注销ID为Member的SESSION变量</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's3')">用户退出示例 (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+//退出登录
+Passport :: logout();
+
+//遍历会话
+var_dump( $_SESSION["Member"] );
+</pre></div>
+
+</div>
+
+
+
+<h3>获取用户头像</h3>
+
+<div class="submsg">
+    <h4><i>string</i> Passport :: avatar( <i>integer</i> uid ,<i>string</i> size )</h4>
+    
+    <h5>函数参数</h5>
+    <table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+    <thead>
+        <tr>
+        <th>参数</th>
+        <td>含义</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th><i>string</i> uid</th>
+        <td>论坛用户ID</td>
+        </tr>
+        <tr>
+        <th><i>string</i> size</th>
+        <td>
+        <em>[空]:</em>正常尺寸<br />
+        <em>small:</em>小尺寸<br />
+        <em>middle:</em>中等尺寸<br />
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    
+    <h5>返回值</h5>
+    <table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+    <thead>
+        <tr>
+        <th>值</th>
+        <td>含义</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th><i>string</i></th>
+        <td>头像的URL</td>
+        </tr>
+    </tbody>
+    </table>
+    
+    <p>本接口函数用于获取指定用户的头像</p>
+    
+    <h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's4')">获取用户数据示例 (PHP)</a></h6>
+    <div class="code" id="s4" style="display: none"><pre>
+//用户ID
+$uid = $_GET['uid'];
+
+//头像尺寸
+$size = $_GET['size'];
+
+//输出头像
+echo Passport :: avatar( $uid, $size );</pre>
+    </div>
+
+</div>
+
+
+
+<h3>用户积分</h3>
+<div class="submsg">
+<h4><i>integer</i> Passport :: money( <i>integer</i> uid , <i>integer</i> add )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> add</th>
+	<td>
+    <em>0:</em>无增减操作<br />
+	<em>&gt;0:</em>增加积分<br />
+	<em>&lt;0:</em>减少积分<br />
+    </td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>当前用户积分</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于查询或获取用户积分</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's5')">用户积分示例 (PHP)</a></h6>
+<div class="code" id="s5" style="display: none"><pre>
+//用户ID
+$uid = $_GET['uid'];
+
+//当前积分
+echo Passport :: money( $uid );
+
+//增加积分
+echo Passport :: money( $uid, 10 );
+
+//减少积分
+echo Passport :: money( $uid, -5 );
+</pre></div>
+
+</div>
+
+
+
+<h3>获取用户个人信息</h3>
+
+<div class="submsg">
+<h4><i>array</i> Passport :: profile( <i>integer</i> uid )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>用户在 VeryIDE 中存储的个人信息</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于获取用户的个人信息</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's6')">用户状态检查示例 (PHP)</a></h6>
+<div class="code" id="s6" style="display: none"><pre>
+
+//用户ID
+$uid = $_GET['uid'];
+
+//个人信息
+$profile = Passport :: profile( $uid );
+
+//打印信息
+print_r( $profile );
+</pre></div>
+
+</div>
+
+
+
+<h3>发送通知</h3>
+
+<div class="submsg">
+<h4><i>void</i> Passport :: notice( <i>integer</i> uid , <i>string</i> title , <i>string</i> message )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> title</th>
+	<td>通知的标题</td>
+	</tr>
+	<tr>
+	<th><i>string</i> message</th>
+	<td>通知的内容</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于向用户发送通知信息</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's7')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s7" style="display: none"><pre>
+//用户ID
+$uid = $_GET['uid'];
+
+//发送通知
+Passport :: notice( $uid, 'hello' , 'hello world!' );
+</pre></div>
+</div>
+
+
+
+<h3>创建用户副本</h3>
+
+<div class="submsg">
+<h4><i>void</i> Passport :: create( <i>integer</i> uid , <i>string</i> account )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> account</th>
+	<td>用户名</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于在 VeryIDE 中创建第三方用户副本</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's8')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s8" style="display: none"><pre>
+//用户ID
+$uid = 999;
+
+//用户名
+$account = 'newbie';
+
+//创建用户
+Passport :: create( $uid, $account );
+</pre></div>
+</div>
+
+
+<h3>用户中心链接</h3>
+<div class="submsg">
+<h4><i>string</i> Passport :: space( <i>integer</i> uid )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> account</th>
+	<td>用户名</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于返回第三方用户中心链接地址</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's9')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s9" style="display: none"><pre>
+//用户ID
+$uid = 999;
+
+//创建用户
+echo Passport :: home( $uid );
+</pre></div>
+</div>
+
+
+<h3>用户签名档操作</h3>
+<div class="submsg">
+<h4><i>string</i> Passport :: signature( <i>integer</i> uid[, <i>string</i> content] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> content</th>
+	<td>用户名</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于返回用户签名档信息</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's22')">用户签名档操作 (PHP)</a></h6>
+<div class="code" id="s22" style="display: none"><pre>
+//用户ID
+$uid = 999;
+
+//创建用户
+echo Passport :: signature( $uid );
+</pre></div>
+</div>
+
+
+<h3>第三方数据库</h3>
+
+<div class="submsg">
+<h4><i>integer</i> Passport :: connect()</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> close</th>
+	<td>TRUE:关闭数据库 否则为打开数据库</td>
+	</tr>	
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	若链接出现错误，则返回对应错误代号
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于打开论坛数据库，若链接数据库出现错误，返回对应的错误代号</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's10')">获取用户数据示例 (PHP)</a></h6>
+<div class="code" id="s10" style="display: none"><pre>
+//打开数据库
+Passport :: connect();
+
+[SOME PHP CODE HERE!]
+
+//关闭数据库
+Passport :: connect();
+</pre></div>
+
+</div>
+
+
+
+<h3>处理跨域登录</h3>
+
+<div class="submsg">
+    
+    <h4>参考 module/passport/sso.php</h4>
+    
+    <div class="code"><pre>
+1.在应用根目录创建 sso.php
+
+2.包含（require）跨域包：module/passport/sso.php
+
+3.在 passport.js 引入之后放置 &lt;script type="text/javascript"&gt; Passport.API = 'sso.php'; //跨域支持 &lt;/script&gt;
+</pre>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

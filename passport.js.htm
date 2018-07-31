@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>XML转成数组</h3>
+
+<div class="submsg">
+<h4><i>array</i> fxXML( <i>string</i> xml )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> xml</th>
+	<td>读取XML</td>
+	</tr>
+</tbody>
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	xmlDoc
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于字符转XML</p>
+</div>
+
+
+
+<h3>检查表单</h3>
+
+<div class="submsg">
+<h4><i>string</i> ckForm ( <i>string</i> form )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> form</th>
+	<td>表单</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	result
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数检查表单</p>
+</div>
+
+
+
+
+<h3>生成分页代码</h3>
+
+<div class="submsg">
+<h4><i>string</i> Multi ( <i>string</i> func，<i>string</i> param，<i>string</i> multi， )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> func</th>
+	<td>函数</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> param</th>
+	<td>参数</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>array</i> multi</th>
+	<td>行数，页数，页码</td>
+	</tr>
+</tbody>
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	temp
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数生成分页代码</p>
+</div>
+
+
+
+
+
+<h3>用户状态检查，并回调函数</h3>
+<div class="submsg">
+<h4><i>string</i> Check ( )</h4>
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<div class="code">
+<pre>
+	//	用户状态检查，并回调函数
+	Check : function( func ){
+		
+		Mo.json( Passport.Base+"/api.php?action=checkin&callback=?", {} , func );
+		
+	},
+</pre>
+</div>
+
+
+</table>
+
+
+
+
+<p>本函数用户状态检查</p>
+</div>
+
+
+
+
+
+<h3>用户退出询问</h3>
+<div class="submsg">
+<h4><i>string</i> Logout ( )</h4>
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<div class="code">
+<pre>
+	//	用户退出询问
+	Logout : function(){
+		
+		if(confirm("确认要退出登录吗?")){	
+			Passport.doLogout();
+		}
+		
+	},
+</pre>
+</div>
+
+
+</table>
+
+
+
+
+<p>本函数用户状态检查</p>
+</div>
+
+
+
+
+
+<h3>输出用户头像</h3>
+
+<div class="submsg">
+<h4><i>string</i> Avatar ( <i>string</i> uid，<i>string</i> size )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> size</th>
+	<td>头像尺寸</td>
+	</tr>
+</tbody>
+
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于生成分页代码</p>
+</div>
+
+
+
+
+<h3>显示登录窗口</h3>
+
+<div class="submsg">
+<h4><i>string</i> Login ( <i>string</i> profile，<i>string</i> locked，<i>string</i> register，<i>string</i> point，<i>string</i> product )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> profile</th>
+	<td>是否更新用户资料</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> locked</th>
+	<td>是否锁定背景</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> register</th>
+	<td>注册页地址</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> point</th>
+	<td>登录提示信息</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> product</th>
+	<td>通行证提供商</td>
+	</tr>
+</tbody>
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于显示登录窗口</p>
+</div>
+
+
+
+
+
+<h3>处理用户登录</h3>
+
+<div class="submsg">
+<h4><i>string</i> Login ( <i>string</i> form )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> form</th>
+	<td>表单</td>
+	</tr>
+</tbody>
+
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	false
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于处理用户登录</p>
+</div>
+
+
+
+
+
+<h3>用户登录回调</h3>
+
+<div class="submsg">
+<h4><i>string</i> fxLogin ( <i>string</i> data )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> form</th>
+	<td>表单</td>
+	</tr>
+</tbody>
+
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于登录回调</p>
+</div>
+
+
+
+
+
+
+
+
+
+<h3>显示用户资料窗口</h3>
+
+<div class="submsg">
+<h4><i>string</i> Profile ( <i>string</i> profile，<i>string</i> lock，<i>string</i> popup， )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> profile</th>
+	<td>需要更新的字段（数组）</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> lock</th>
+	<td>是否锁定背景</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> popup</th>
+	<td>是否强制弹出资料修正框</td>
+	</tr>
+</tbody>
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>显示用户资料窗口</p>
+</div>
+
+
+
+
+
+
+<h3>处理用户资料更新</h3>
+
+<div class="submsg">
+<h4><i>string</i> doProfile ( <i>string</i> form )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> form</th>
+	<td>表单</td>
+	</tr>
+</tbody>
+
+
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	false
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于处理用户登录</p>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

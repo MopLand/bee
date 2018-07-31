@@ -1,0 +1,2312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>获得文件得到缩略图地址</h3>
+
+<div class="submsg">
+<h4><i>string</i> fix_thumb( <i>string</i> file [, <i>integer</i> size] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>源文件</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> size</th>
+	<td>尺寸</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	缩略图地址
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>处理多域名下附件路径</h3>
+
+<div class="submsg">
+<h4><i>string</i> fix_file( <i>string</i> text )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> text</th>
+	<td>内容块</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> text</th>
+	<td></td>
+	</tr>
+</tbody>
+</table>
+
+<p>处理多域名下附件路径问题。</p>
+
+</div>
+
+
+
+
+<h3>过滤XML标准规定的无效字节</h3>
+
+<div class="submsg">
+<h4><i>string</i> fix_xml( <i>string</i> xml )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> xml</th>
+	<td>用户名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> xml</th>
+	<td>转换过的内容块</td>
+	</tr>
+</tbody>
+</table>
+
+<p>过滤XML标准规定的无效字节。</p>
+
+</div>
+
+
+<h3>编码或解码JSON，并支持中文</h3>
+
+<div class="submsg">
+<h4><i>array</i> fix_json( <i>string/array</i> data )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> data</th>
+	<td>JSON字符串或数组</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> data</th>
+	<td>
+  	返回修正后的数据
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>修正JSON不支持中文的问题。</p>
+
+</div>
+
+
+<h3>清除字符串或数组中的空白</h3>
+
+<div class="submsg">
+<h4><i>array</i> fix_white( <i>string/array</i> data )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> data</th>
+	<td>字符串或数组</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> data</th>
+	<td>
+  	返回修正后的数组
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>清除字符串或数组中的空白。</p>
+
+</div>
+
+
+<h3>格式化GET中的数组</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_get( <i>string</i> name , <i>array</i> array , <i>array</i> ignore )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> name</th>
+	<td>参数名称</td>
+	</tr>
+	<tr>
+	<th><i>array</i> array</th>
+	<td>数组值</td>
+	</tr>
+	<tr>
+	<th><i>array</i> ignore</th>
+	<td>要忽略的值</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+  	格式化的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+<p>格式化GET中的数组。</p>
+</div>
+
+
+
+<h3>格式化数据表名称</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_table( <i>string</i> table )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> table</th>
+	<td>用户名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> table</th>
+	<td>
+  	格式化后的表名
+	</td>
+	</tr>
+</tbody>
+</table>
+<p>格式化数据表名称。</p>
+</div>
+
+
+<h3>编码JSON中的中文字符</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_json( <i>string</i> code )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户 ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> code</th>
+	<td>编码后的中文字符</td>
+	</tr>
+</tbody>
+</table>
+
+<p>编码JSON中的中文字符。</p>
+
+</div>
+
+
+<h3>格式化字符集名称</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_charset( <i>string</i> charset [, <i>boolean</i> reset] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> charset</th>
+	<td>需要格式化的字符串</td>
+	</tr>
+	<tr>
+	<th><i>boolean</i> reset</th>
+	<td>
+	<em>true:</em>还原<br />
+	<em>false:</em>格式化（默认）<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>格式化后的字符集</td>
+	</tr>
+</tbody>
+</table>
+
+<p>格式化字符集名称 reset=false 把 字符集的 "-" 替换掉; reset=true 把 字符集的 "utf8" 替换成 "utf-8"。</p>
+
+</div>
+
+
+
+<h3>加载样式</h3>
+
+<div class="submsg">
+<h4><i>string</i> loader_style( <i>string</i> src , <i>string</i> charset , <i>string</i> version )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> src</th>
+	<td>路径</td>
+	</tr>
+	<tr>
+	<th><i>string</i> charset</th>
+	<td>字符集</td>
+	</tr>
+	<tr>
+	<th><i>string</i> version</th>
+	<td>版本号</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> style</th>
+	<td>
+	样式路径
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+<h3>加载脚本</h3>
+
+<div class="submsg">
+<h4><i>string</i> loader_script( <i>string</i> src , <i>string</i> charset , <i>string</i> version )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> src</th>
+	<td>路径</td>
+	</tr>
+	<tr>
+	<th><i>string</i> charset</th>
+	<td>字符集</td>
+	</tr>
+	<tr>
+	<th><i>string</i> version</th>
+	<td>版本号</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> script</th>
+	<td>
+	脚本路径
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+<h3>加载图片</h3>
+
+<div class="submsg">
+<h4><i>string</i> loader_image( <i>string</i> src [, <i>string</i> title , <i>string</i> class , <i>string</i> click] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> src</th>
+	<td>路径</td>
+	</tr>
+	<tr>
+	<th><i>string</i> title</th>
+	<td>标题</td>
+	</tr>
+	<tr>
+	<th><i>string</i> class</th>
+	<td>样式</td>
+	</tr>
+	<tr>
+	<th><i>string</i> click</th>
+	<td>点击事件</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	图片链接
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+
+<h3>合并路径</h3>
+
+<div class="submsg">
+<h4><i>string</i> url_merge( [<i>string</i> path] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> path</th>
+	<td>路径</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	路径
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>合并路径，去除多余的“../”、“//”等等。</p>
+
+</div>
+
+
+
+
+<h3>获取当前主机地址</h3>
+
+<div class="submsg">
+<h4><i>string</i> url_host()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	主机地址
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获取当前主机地址，不包含子目录。</p>
+
+</div>
+
+
+
+<h3>获取当前目录相对地址</h3>
+
+<div class="submsg">
+<h4><i>string</i> url_base()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	主域名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获取当前主域名。</p>
+
+</div>
+
+
+
+<h3>获取当前目录绝对地址</h3>
+
+<div class="submsg">
+<h4><i>string</i> url_fore()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	主域名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获取当前主域名。</p>
+
+</div>
+
+
+
+<h3>获取当前目录绝对地址</h3>
+
+<div class="submsg">
+<h4><i>string</i> url_path( [<i>string</i> sys] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> sys</th>
+	<td>
+	<em>true:</em>网站根目录<br />
+	<em>false:</em>目录绝对地址<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>地址</td>
+	</tr>
+</tbody>
+</table>
+
+<p>当前目录绝对地址。</p>
+
+</div>
+
+
+
+
+<h3>chr字符转html</h3>
+
+<div class="submsg">
+<h4><i>string</i> chrToHTML( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>chr字符转html。</p>
+
+</div>
+
+
+
+<h3>格式化标签</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_tag( <i>string</i> tag , <i>string</i> url , <i>string</i> target , <i>string</i> space )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> tag</th>
+	<td>标签字符串</td>
+	</tr>
+	<tr>
+	<th><i>string</i> url</th>
+	<td>链接地址</td>
+	</tr>
+	<tr>
+	<th><i>string</i> target</th>
+	<td>目标窗口</td>
+	</tr>
+	<tr>
+	<th><i>string</i> space</th>
+	<td>分隔符</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	带链接的标签集
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>格式化标签。</p>
+</div>
+
+
+
+
+<h3>截取过长URL</h3>
+
+<div class="submsg">
+<h4><i>string</i> format_url( <i>string</i> url , <i>integer</i> length )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> url</th>
+	<td>原始 URL 字符串</td>
+	</tr>
+	<tr>
+	<th><i>string</i> length</th>
+	<td>目标长度</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>截取后的 URL 字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<p>截取过长URL。</p>
+
+</div>
+
+
+
+<h3>日期时间相加</h3>
+
+<div class="submsg">
+<h4><i>string</i> DateAdd( <i>string</i> interval , <i>string</i> number , <i>string</i> date )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> interval</th>
+	<td>类型</td>
+	</tr>
+	<tr>
+	<th><i>string</i> number</th>
+	<td>数量</td>
+	</tr>
+	<tr>
+	<th><i>string</i> date</th>
+	<td>时间</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> integer</th>
+	<td>时间戳</td>
+	</tr>
+</tbody>
+</table>
+
+<p>日期时间相加。</p>
+
+</div>
+
+
+
+<h3>日期比较函数</h3>
+
+<div class="submsg">
+<h4><i>string</i> FormatDateDiff( <i>string</i> d1 , <i>string</i> d2 )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> d1</th>
+	<td>时间1</td>
+	</tr>
+	<tr>
+	<th><i>string</i> d2</th>
+	<td>时间2</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>相差时间</td>
+	</tr>
+</tbody>
+</table>
+
+<p>两个日期比较：d2-d1。</p>
+
+</div>
+
+
+
+<h3>比较日期时间</h3>
+
+<div class="submsg">
+<h4><i>integer</i> DateDiff( <i>string</i> interval , <i>string</i> date1 , <i>string</i> date2 )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> interval</th>
+	<td>类型</td>
+	</tr>
+	<tr>
+	<th><i>string</i> date1</th>
+	<td>时间1（时间戳格式）</td>
+	</tr>
+	<tr>
+	<th><i>string</i> date2</th>
+	<td>时间2（时间戳格式）</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i>retval</th>
+	<td>
+  	时间
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>比较日期时间。</p>
+
+</div>
+
+
+
+<h3>获取请求</h3>
+
+<div class="submsg">
+<h4><i>string</i> getgpc( <i>string</i> key[, <i>string</i> type] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> key</th>
+	<td>索引</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> type</th>
+	<td>
+    <em>G:</em>GET<br />
+	<em>P:</em>POST<br />
+	<em>C:</em>COOKIE<br />
+    </td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>POST 或 GET 过来的值</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3>获取数值</h3>
+<div class="submsg">
+<h4><i>string</i> getnum( <i>string</i> key [, <i>integer</i> default ] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> key</th>
+	<td>索引</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> default</th>
+	<td>默认值</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> num</th>
+	<td>POST 或 GET 过来的数值</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3>获取页码</h3>
+<div class="submsg">
+<h4><i>string</i> getpage( <i>string</i> key )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> key</th>
+	<td>索引</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> num</th>
+	<td>POST 或 GET 过来的页码</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>汉字截取函数</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetSubStr( <i>string</i> string , <i>integer</i> sublen [, <i>integer</i> start , <i>string</i> code] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> string</th>
+	<td>字符串</td>
+	</tr>
+	<tr>
+	<th><i>number</i> sublen</th>
+	<td>截取长度</td>
+	</tr>
+	<tr>
+	<th><i>number</i> start</th>
+	<td>开始长度（默认：0）</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> code</th>
+	<td>编码（默认：UTF-8）</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> tmpstr</th>
+	<td>截取的汉字字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<p>Utf-8、gb2312都支持的汉字截取函数。</p>
+
+</div>
+
+
+
+<h3>中文截取</h3>
+
+<div class="submsg">
+<h4><i>string</i> gbk_substr( <i>string</i> str , <i>integer</i> slen [, <i>integer</i> startdd] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> str</th>
+	<td>字符串</td>
+	</tr>
+	<tr>
+	<th><i>number</i> slen</th>
+	<td>截取长度</td>
+	</tr>
+	<tr>
+	<th><i>number</i> startdd</th>
+	<td>开始长度（默认：0）</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> restr</th>
+	<td>截取的汉字字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<p>中文截取2，单字节截取模式。</p>
+
+</div>
+
+
+
+<h3>截取字符串</h3>
+
+<div class="submsg">
+<h4><i>string</i> utf_substr( <i>string</i> str , <i>integer</i> len [, <i>boolean</i> flag] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> str</th>
+	<td>字符串</td>
+	</tr>
+	<tr>
+	<th><i>number</i> slen</th>
+	<td>截取长度</td>
+	</tr>
+	<tr>
+	<th><i>boolean</i> flag</th>
+	<td>最后是否加 ...（默认：true）</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> new_str</th>
+	<td>截取过的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+<h3>隐藏IP地址</h3>
+<div class="submsg">
+<h4><i>string</i> hide_ip( <i>string</i> ip )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> ip</th>
+	<td>ip地址</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>ip后两位变成 "*" </td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>隐藏电话号码</h3>
+<div class="submsg">
+<h4><i>string</i> hide_phone( <i>string</i> ip )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> ip</th>
+	<td>电话号码</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>后4为变成 "*" 的电话号码</td>
+	</tr>
+</tbody>
+</table>
+
+<p>超过6为的电话号码，后4为变成 "*" 。</p>
+
+</div>
+
+
+
+<h3>隐藏电子邮件</h3>
+
+<div class="submsg">
+<h4><i>string</i> hide_email( <i>string</i> ip )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> ip</th>
+	<td>电子邮件</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>隐藏邮件地址</td>
+	</tr>
+</tbody>
+</table>
+
+<p>隐藏邮件地址。</p>
+
+</div>
+
+
+
+<h3>获取IP</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetIP()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> cip</th>
+	<td>当前IP</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获取请求。</p>
+
+</div>
+
+
+
+<h3>获得当前的脚本网址</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetCurUrl()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> nowurl</th>
+	<td>脚本网址</td>
+	</tr>
+</tbody>
+</table>
+<p>获得当前的脚本网址。</p>
+
+</div>
+
+
+
+<h3>获得当前的绝对网址</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetAbsUrl()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>绝对网址</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获得当前的绝对网址。</p>
+
+</div>
+
+
+
+<h3>获得当前的文件名</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetCurFile()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>文件名</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获得当前的文件名。</p>
+
+</div>
+
+
+
+
+<h3>把全角数字转为半角数字</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetAlabNum(<i>string</i> fnum)</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> fnum</th>
+	<td>需要转换的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> fnum</th>
+	<td>转换过的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<p>把全角数字转为半角数字。</p>
+
+</div>
+
+
+
+
+<h3>清除HTML标记</h3>
+
+<div class="submsg">
+<h4><i>string</i> ClearHtml( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>需要清楚标记的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>清楚标记的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<p>清除HTML标记。</p>
+
+</div>
+
+
+
+
+<h3>取得文件夹大小</h3>
+
+<div class="submsg">
+<h4><i>string</i> GetFolderSize( <i>string</i> d )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> d</th>
+	<td>文件夹名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>number</i> size</th>
+	<td>文件夹大小</td>
+	</tr>
+</tbody>
+</table>
+
+<p>取得文件夹大小。</p>
+
+</div>
+
+
+
+<h3>返回换算后的文件大小</h3>
+
+<div class="submsg">
+<h4><i>string</i> sizecount( <i>number</i> size )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>number</i> size</th>
+	<td>文件字节</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> string</th>
+	<td>文件大小</td>
+	</tr>
+</tbody>
+</table>
+
+<p>返回换算后的文件大小。</p>
+
+</div>
+
+
+
+<h3>得到文件扩展名</h3>
+
+<div class="submsg">
+<h4><i>string</i> fileext( <i>string</i> filename )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> filename</th>
+	<td>文件名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>文件扩展名</td>
+	</tr>
+</tbody>
+</table>
+
+<p>得到文件扩展名。</p>
+
+</div>
+
+
+
+<h3>测试字符串是否在另一字符串中出现</h3>
+
+<div class="submsg">
+<h4><i>boolean</i> strexists( <i>string</i> string , <i>string</i> find )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> string</th>
+	<td>当前字符串</td>
+	</tr>
+	<tr>
+	<th><i>string</i> find</th>
+	<td>要搜索的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i></th>
+	<td>是否为真</td>
+	</tr>
+</tbody>
+</table>
+
+<p>测试字符串是否在另一字符串中出现。</p>
+
+</div>
+
+
+<h3>分页函数</h3>
+<div class="submsg">
+<h4><i>string</i> multipage( <i>number</i> page ，<i>number</i> row_count ，<i>number</i> page_size ，<i>string</i> url ，<i>string</i> style )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>number</i> page</th>
+	<td>当前页码</td>
+	</tr>
+	<tr>
+	<th><i>number</i> row_count</th>
+	<td>总记录数</td>
+	</tr>
+	<tr>
+	<th><i>number</i> page_size</th>
+	<td>页数</td>
+	</tr>
+	<tr>
+	<th><i>string</i> url</th>
+	<td>url</td>
+	</tr>
+	<tr>
+	<th><i>string</i> style</th>
+	<td>样式名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> page_link</th>
+	<td>分页代码</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+<h3>分页函数</h3>
+<div class="submsg">
+<h4><i>string</i> simplepage( <i>number</i> page ，<i>number</i> row_count ，<i>number</i> page_size ，<i>string</i> url ，<i>string</i> style )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>number</i> page</th>
+	<td>当前页码</td>
+	</tr>
+	<tr>
+	<th><i>number</i> row_count</th>
+	<td>总记录数</td>
+	</tr>
+	<tr>
+	<th><i>number</i> page_size</th>
+	<td>页数</td>
+	</tr>
+	<tr>
+	<th><i>string</i> url</th>
+	<td>url</td>
+	</tr>
+	<tr>
+	<th><i>string</i> style</th>
+	<td>样式名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> page_link</th>
+	<td>分页代码</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+<h3>获取文件内容</h3>
+
+<div class="submsg">
+<h4><i>string</i> sreadfile( <i>string</i> filename )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> filename</th>
+	<td>文件名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> content</th>
+	<td>返回文件的内容</td>
+	</tr>
+</tbody>
+</table>
+
+<p>获取文件内容。</p>
+
+</div>
+
+
+
+
+<h3>遍历子文件</h3>
+
+<div class="submsg">
+<h4><i>array</i> loop_file( <i>string</i> root [, <i>array</i> filter, <i>array</i> exta] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> root</th>
+	<td>根目录地址</td>
+	</tr>
+	<tr>
+	<th><i>array</i> filter</th>
+	<td>排除在外的目录名</td>
+	</tr>
+	<tr>
+	<th><i>array</i> exta</th>
+	<td>限定扩展名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i> result</th>
+	<td>返回文件名组成的数组</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="code"><pre>
+//遍历当前目前下的文件
+$list = loop_file( './', array( 'test.log' ), array( 'txt' ) );
+
+//查看目录列表
+var_dump( $list );
+</pre></div>
+
+</div>
+
+
+
+<h3>遍历子目录</h3>
+
+<div class="submsg">
+<h4><i>array</i> loop_dir( <i>string</i> root [, <i>array</i> filter] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> root</th>
+	<td>根目录地址</td>
+	</tr>
+	<tr>
+	<th><i>array</i> filter</th>
+	<td>排除在外的目录名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i> result</th>
+	<td>返回目录名组成的数组</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="code"><pre>
+//遍历当前目前下的文件夹
+$list = loop_dir( './', array( 'cache' ) );
+
+//查看目录列表
+var_dump( $list );
+</pre></div>
+
+</div>
+
+
+<h3>创建文件</h3>
+<div class="submsg">
+<h4><i>boolean</i> create_file( <i>string</i> file , <i>string</i> text )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>文件名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> text</th>
+	<td>文件内容</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i></th>
+	<td>
+	<em>true:</em>成功 <br/>
+	<em>false:</em>失败
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<h3>创建文件夹</h3>
+<div class="submsg">
+<h4><i>string</i> create_dir( <i>string</i> file[, <i>bool</i> index, <i>intger</i> mode ] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>文件夹名</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>bool</i> index</th>
+	<td>是否自动创建空白索引文件（index.htm）</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>intger</i> mode</th>
+	<td>权限，默认 0755</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>返回文件夹名</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+<h3>删除文件夹</h3>
+
+<div class="submsg">
+<h4><i>boolean</i> delete_dir( <i>string</i> dir )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> dir</th>
+	<td>文件夹名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i> content</th>
+	<td>
+	<em>true:</em>成功 <br/>
+	<em>false:</em>失败 <br/>	
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>此函数将会自动删除文件夹内的文件和子文件夹</p>
+
+</div>
+
+
+
+<h3>获取指定长度随机字符</h3>
+
+<div class="submsg">
+<h4><i>string</i> rand_string( <i>number</i> length )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>number</i> length</th>
+	<td>字符长度</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> hash</th>
+	<td>返回随机字符串</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>随机颜色</h3>
+
+<div class="submsg">
+<h4><i>string</i> rand_color()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	十六进制颜色值（#AABBCC 形式）
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

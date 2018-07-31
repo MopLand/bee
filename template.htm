@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 了解 VeryIDE Bee</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>VeryIDE 通行证模板构成</h3>
+
+<div class="mainmsg">
+	VeryIDE 通行证中模板是以独立文件夹的形式存放于 module/passport/theme 中，其中每个文件夹对应一个模板
+    <center><img src="images/passport_template2.jpg" /></center>
+</div>
+
+<h3>VeryIDE 通行证模板文件</h3>
+
+<div class="mainmsg">
+	
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>images</th>
+	<td>用于存放模板的图片元素</td>
+	</tr>
+	<tr>
+	<th>js</th>
+	<td>用于存放模板前端脚本文件</td>
+	</tr>
+	<tr>
+	<th>style</th>
+	<td>用于存放模板CSS样式文件</td>
+	</tr>
+    <tr>
+	<th>header.php</th>
+	<td>模板头部，供 PHP 引用</td>
+	</tr>
+    <tr>
+	<th>header.htm</th>
+	<td>公共头部，供模板引用</td>
+	</tr>
+	<tr>
+	<th>footer.php</th>
+	<td>模板底部，供 PHP 引用</td>
+	</tr>
+	<tr>
+	<th>footer.htm</th>
+	<td>公共底部，供模板引用</td>
+	</tr>
+	<tr>
+	<th>*</th>
+	<td>其他资源文件</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<h3>VeryIDE 通行证模板勾子</h3>
+
+<div class="mainmsg">
+	
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+        <th>passport:naver</th>
+        <td>全局顶部导航条</td>
+	</tr>
+	<tr>
+        <th>passport:header</th>
+        <td>模块头</td>
+	</tr>
+	<tr>
+        <th>passport:footer</th>
+        <td>模块尾</td>
+	</tr>
+	<tr>
+        <th>form:view</th>
+        <td>表单（包括试题、辩论和投票）查看页</td>
+	</tr>
+	<tr>
+        <th>form:post</th>
+        <td>表单（包括试题、辩论和投票）提交页</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

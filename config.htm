@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 了解 VeryIDE Bee</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<div class="mainmsg">以下关于文件的阐述以及代码的样例，均以 PHP 程序为例。<br /><br /></div>
+
+<h3>VeryIDE 配置文件</h3>
+
+<div class="mainmsg">
+	目前 VeryIDE 的全局配置文件共有  个，均位于 config/ 中：
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>attach.xml</th>
+	<td>远程附件和水印配置，模板文件</td>
+	</tr>
+	<tr>
+	<th>attach.php</th>
+	<td>远程附件和水印配置，存储文件</td>
+	</tr>
+	<tr>
+	<th>global.xml</th>
+	<td>网站全局配置，模板文件</td>
+	</tr>
+	<tr>
+	<th>global.php</th>
+	<td>网站全局配置，存储文件</td>
+	</tr>
+	<tr>
+	<th>mail.xml</th>
+	<td>电子邮件配置，模板文件</td>
+	</tr>
+	<tr>
+	<th>mail.php</th>
+	<td>电子邮件配置，存储文件</td>
+	</tr>
+	<tr>
+	<th>config.php</th>
+	<td>数据库配置</td>
+	</tr>
+	<tr>
+	<th>version.php</th>
+	<td>系统版本信息</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<h3>config.php</h3>
+
+<div class="mainmsg">
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>VI_BASE</th>
+	<td>VeryIDE 根目录，相对地址</td>
+	</tr>
+	<tr>
+	<th>VI_HOST</th>
+	<td>VeryIDE 根目录，绝对地址（带有 http 信息）</td>
+	</tr>
+	<tr>
+	<th>VI_START</th>
+	<td>安装时间，将作为部分 API 的密钥，请勿泄露</td>
+	</tr>
+	<tr>
+	<th>VI_DBHOST</th>
+	<td>VeryIDE 数据库主机</td>
+	</tr>
+	<tr>
+	<th>VI_DBPORT</th>
+	<td>VeryIDE 数据库主机端口</td>
+	</tr>
+	<tr>
+	<th>VI_DBUSER</th>
+	<td>VeryIDE 数据库用户名</td>
+	</tr>
+	<tr>
+	<th>VI_DBPASS</th>
+	<td>VeryIDE 数据库密码</td>
+	</tr>
+	<tr>
+	<th>VI_DBNAME</th>
+	<td>VeryIDE 数据库名称</td>
+	</tr>
+	<tr>
+	<th>VI_DBCHARSET</th>
+	<td>VeryIDE 数据库字符集</td>
+	</tr>
+	<tr>
+	<th>VI_DBMANPRE</th>
+	<td>VeryIDE 系统数据库表前缀</td>
+	</tr>
+	<tr>
+	<th>VI_DBMODPRE</th>
+	<td>VeryIDE 模块数据库表前缀</td>
+	</tr>
+	<tr>
+	<th>VI_UCS</th>
+	<td class="max">UCS编码方式<br />
+<em>UCS-2:</em>默认编码，Windows 常用<br />
+<em>UCS-2BE:</em>部分 *nux 系统使用（请在表单等用户数据出现乱码时使用）<br /></td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<h3>version.php</h3>
+
+<div class="mainmsg">
+	
+	<h5>$_G['product']</h5>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>appname</th>
+	<td>产品名称</td>
+	</tr>
+	<tr>
+	<th>version</th>
+	<td>产品版本</td>
+	</tr>
+	<tr>
+	<th>version</th>
+	<td>VeryIDE 版本号</td>
+	</tr>
+	<tr>
+	<th>build</th>
+	<td>VeryIDE 最后更新日期</td>
+	</tr>
+	<tr>
+	<th>charset</th>
+	<td>VeryIDE 语言编码</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<h5>$_G['system']</h5>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>base</th>
+	<td>相对地址</td>
+	</tr>
+	<tr>
+	<th>host</th>
+	<td>绝对地址</td>
+	</tr>
+	<tr>
+	<th>root</th>
+	<td>本地地址</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<h5>$_G['project']</h5>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>heartbeat</th>
+	<td>心跳频率（秒）</td>
+	</tr>
+	<tr>
+	<th>domain</th>
+	<td>站点主域名，自动获取值</td>
+	</tr>
+	<tr>
+	<th>queries</th>
+	<td>数据库查询次数</td>
+	</tr>
+	<tr>
+	<th>check</th>
+	<td>需要检查目录权限的目录</td>
+	</tr>
+	<tr>
+	<th>attach</th>
+	<td>附件位置</td>
+	</tr>
+	<tr>
+	<th>object</th>
+	<td>对象归属</td>
+	</tr>
+	<tr>
+	<th>home</th>
+	<td>数据库查询次数</td>
+	</tr>
+	<tr>
+	<th>powered</th>
+	<td>支持信息</td>
+	</tr>
+	<tr>
+	<th>product</th>
+	<td>产品全称</td>
+	</tr>
+	<tr>
+	<th>email</th>
+	<td>服务信箱</td>
+	</tr>
+	<tr>
+	<th>stat</th>
+	<td>统计配置</td>
+	</tr>
+	<tr>
+	<th>sex</th>
+	<td>性别信息</td>
+	</tr>
+	<tr>
+	<th>marriage</th>
+	<td>婚姻状态</td>
+	</tr>
+	<tr>
+	<th>weeks</th>
+	<td>周数组</td>
+	</tr>
+	<tr>
+	<th>months</th>
+	<td>月数组</td>
+	</tr>
+	<tr>
+	<th>days</th>
+	<td>天数组</td>
+	</tr>
+	<tr>
+	<th>state</th>
+	<td>数据状态</td>
+	</tr>
+	<tr>
+	<th>func</th>
+	<td>系统权限</td>
+	</tr>
+	<tr>
+	<th>pages</th>
+	<td>页面权限</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<h5>$_G['version']</h5>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>	
+	<tr>
+	<th>demo</th>
+	<td>演示版</td>
+	</tr>
+	<tr>
+	<th>free</th>
+	<td>免费版</td>
+	</tr>
+	<tr>
+	<th>full</th>
+	<td>商业版</td>
+	</tr>
+	<tr>
+	<th>only</th>
+	<td>特别版</td>
+	</tr>
+	</tbody>
+	</table>
+	
+	<h5>$_G['upload']</h5>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>image</th>
+	<td>允许上传的图片类型</td>
+	</tr>
+	<tr>
+	<th>media</th>
+	<td>允许上传的媒体类型</td>
+	</tr>
+	<tr>
+	<th>flash</th>
+	<td>允许上传的Flash类型</td>
+	</tr>
+	<tr>
+	<th>files</th>
+	<td>允许其它的文件类型</td>
+	</tr>
+	</tbody>
+	</table>
+    
+	<p>根据 VeryIDE 版本不同，以上内容也可能不尽相同 </p>
+	
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

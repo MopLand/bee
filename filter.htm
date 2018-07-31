@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+<h3>过滤特殊字符</h3>
+
+<div class="submsg">
+<h4><i>string</i> UnFilterHtml( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+本接口函数用于过滤字符串中的空格，换行等特殊字符和html特殊标签
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's1')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s1" style="display: none">
+  <pre>
+$str="s&lt;br /&gt;s";
+echo UnFilterHtml($str); //ss
+</pre></div>
+</div>
+
+
+<h3>过滤html标签</h3>
+<div class="submsg">
+<h4><i>string</i> FilterHtml( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+本接口函数用于过滤字符串中的html标签
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's2')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s2" style="display: none">
+  <pre>
+$str="s&lt;br /&gt;s";
+echo FilterHtml($str); //ss
+</pre></div>
+</div>
+
+
+<h3>过滤UBB标签</h3>
+
+<div class="submsg">
+<h4><i>string</i> clear_ubb( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+本接口函数用于过滤字符串中的UBB标签
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's3')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s3" style="display: none">
+  <pre>
+$str="[b]ss[/b]";
+echo clear_ubb($str); //ss
+</pre></div>
+</div>
+
+
+
+<h3>过滤html中的换行空格等</h3>
+
+<div class="submsg">
+<h4><i>string</i> DeleteHtml( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+本接口函数用于过滤字符串中的\t,\n,\r\n,\r," "
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's4')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s4" style="display: none">
+  <pre>
+$str="ss\t";
+echo DeleteHtml($str); //ss
+</pre></div>
+</div>
+
+
+<h3>压缩html</h3>
+
+<div class="submsg">
+<h4><i>string</i> compress( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于压缩HTML，删除无用空白（注意：以下形式的注释暂时不能处理）</p>
+<p>&lt;script&gt;&lt;!--<br />
+--&gt;&lt;/script&gt;</p>
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's5')">用户登录示例 (PHP)</a></h6>
+<div class="code" id="s5" style="display: none">
+  <pre>
+$str="&lt;br /&gt;";
+echo compress($str); //&lt;br/&gt;
+</pre></div>
+</div>
+
+
+<h3>过滤全局输入</h3>
+
+<div class="submsg">
+<h4><i>string</i> inject_filter( <i>string</i> content )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> content</th>
+	<td>
+	过滤后的字符串
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于过滤全局输入,将全局的html、ubb编码以及特殊字符进行递归过滤</p>
+
+</div>
+
+
+
+<h3>sql检测</h3>
+
+<div class="submsg">
+<h4><i>Boolean</i> inject_check( <i>string</i> str )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> str</th>
+	<td>过滤前的字符串</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>Boolean</i></th>
+	<td>
+	存在危险参数时返回 FALSE，否则返回 TRUE
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>本接口函数用于检测从外部传入的参数，存在危险参数时返回 FALSE，否则返回 TRUE</p>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

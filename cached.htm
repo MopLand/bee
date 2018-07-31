@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>获取缓存存储目录</h3>
+
+<div class="submsg">
+<h4> Cached :: direct( <i>string</i> appid )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	缓存存储目录
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>删除缓存文件</h3>
+
+<div class="submsg">
+<h4> Cached :: delete( <i>string</i> appid, <i>string</i> file )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>缓存名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i></th>
+	<td>
+	<em>true:</em>删除成功<br />
+	<em>false:</em>删除失败
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>载入缓存文件</h3>
+
+<div class="submsg">
+<h4> Cached :: loader( <i>string</i> appid, <i>string</i> file )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+    <tr>
+	<th><i>string</i> file</th>
+	<td>缓存名称，仅限 PHP 缓存</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i></th>
+	<td>
+	<em>true:</em>载入成功<br />
+	<em>false:</em>载入失败
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>缓存查询至 JavaScript</h3>
+
+<div class="submsg">
+<h4> Cached :: script( <i>string</i> appid, <i>string</i> sql, <i>string</i> var, <i>string</i> file, <i>string</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+	<tr>
+	<th><i>string</i> var</th>
+	<td>变量名</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> file</th>
+	<td>缓存文件名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> option</th>
+	<td>选项模板</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>缓存多条数据记录</h3>
+
+<div class="submsg">
+<h4> Cached :: multi( <i>string</i> appid, <i>string</i> sql, <i>string</i> file, <i>string</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> table</th>
+	<td>表名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> file</th>
+	<td>缓存文件名</td>
+	</tr>
+    <tr>
+	<th><i>string</i> option</th>
+	<td>选项模板</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+ 
+
+<h3>缓存单条数据记录</h3>
+
+<div class="submsg">
+<h4> Cached :: rows( <i>string</i> appid, <i>string</i> sql, <i>string</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+    <tr>
+	<th><i>string</i> option</th>
+	<td>选项模板</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+ 
+
+<h3>缓存整张数据表</h3>
+
+<div class="submsg">
+<h4> Cached :: table( <i>string</i> appid, <i>string</i> table, <i>string</i> option )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> table</th>
+	<td>表名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> option</th>
+	<td>选项模板</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>缓存页面查询</h3>
+
+<div class="submsg">
+<h4><i>string</i> Cached :: query( <i>string</i> sql, <i>string</i> time, <i>string</i> temp[, <i>bool</i> debug] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> sql</th>
+	<td>查询语句</td>
+	</tr>
+	<tr>
+	<th><i>string</i> time</th>
+	<td>缓存有效期，分钟</td>
+	</tr>
+	<tr>
+	<th><i>string</i> temp</th>
+	<td>缓存模板</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> debug</th>
+	<td>
+	true:调试<br/>
+	false:不调试(默认)<br/>
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> cache</th>
+	<td>生成的缓存</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>缓存表单结构</h3>
+
+<div class="submsg">
+<h4><i>string</i> Cached :: form( <i>string</i> appid, <i>string</i> list )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块 ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> list</th>
+	<td>需要缓存的数据列表</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

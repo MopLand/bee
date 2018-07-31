@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 了解 VeryIDE Bee</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>VeryIDE 模块构成</h3>
+
+<div class="mainmsg">
+	VeryIDE 中模块是以独立文件夹的形式存放于 module/ 中，每个模块的名字（我们称之为 appid ）都是唯一的，其中 system 为系统模块不能执行删除和卸载操作。
+	<center><img src="images/module.jpg" /></center>
+</div>
+
+<h3>VeryIDE 模块文件</h3>
+
+<div class="mainmsg">
+	
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>config.php</th>
+	<td>模块配置文件</td>
+	</tr>
+	<tr>
+	<th>function.php</th>
+	<td>模块函数包</td>
+	</tr>
+	<tr>
+	<th>index.php</th>
+	<td>首页文件，一般用作跳转</td>
+	</tr>
+	<tr>
+	<th>naver.php</th>
+	<td>公共导航文件</td>
+	</tr>
+	<tr>
+	<th>icon.png</th>
+	<td>图标，最佳 60×60</td>
+	</tr>
+	<tr>
+	<th>setting.xml</th>
+	<td>配置项，模板文件</td>
+	</tr>
+	<tr>
+	<th>setting.php</th>
+	<td>配置项，存储文件</td>
+	</tr>
+	<th>navigate.xml</th>
+	<td>导航配置项，模板文件</td>
+	</tr>
+	<tr>
+	<th>navigate.php</th>
+	<td>导航配置项，存储文件</td>
+	</tr>
+	<tr>
+	<th>install.sql</th>
+	<td>安装脚本</td>
+	</tr>
+	<tr>
+	<th>uninstall.sql</th>
+	<td>卸载脚本</td>
+	</tr>
+	<tr>
+	<th>content/</th>
+	<td>公共用户展示内容（前台）</td>
+	</tr>
+	<tr>
+	<th>widget/</th>
+	<td>小插件目录，详见<a href="widget.htm">小工具</a></td>
+	</tr>
+	<th>*</th>
+	<td>其他资源文件</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+<h3>VeryIDE 模块配置：config.php</h3>
+
+<div class="mainmsg">
+	模块配置文件，位于 module/*/config.php ，以下相关变量：
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr>
+	<th>name</th>
+	<td>模块名称，推荐4个字以内</td>
+	</tr>
+	<tr>
+	<th>model</th>
+	<td>模块类型<br />
+<em>system:</em>系统模块<br />
+<em>module:</em>应用模块（提供用户访问、配置和交互的内容块，可以创建快捷方式和桌面小工具）<br />
+<em>service:</em>后台服务（提供服务支持的功能性模块，没有用户界面，可以创建桌面小工具）<br /></td>
+	</tr>
+	<tr>
+	<th>version</th>
+	<td>模块版本号</td>
+	</tr>
+	<tr>
+	<th>author</th>
+	<td>开发者</td>
+	</tr>
+	<tr>
+	<th>support</th>
+	<td>支持页面，链接地址</td>
+	</tr>
+	<tr>
+	<th>describe</th>
+	<td>模块描述</td>
+	</tr>
+	<tr>
+	<th>serve</th>
+	<td>后台服务脚本（*.js），当用户添加到桌面时执行</td>
+	</tr>
+	<tr>
+	<th>appid</th>
+	<td>当前模块 APPID</td>
+	</tr>
+	<th>*</th>
+	<td>其他配置项</td>
+	</tr>
+	</tbody>
+	</table>
+	以上为必选项，根据模块实际情况有可能会有所增加，具体请参考每个模块目录下面的 /config.php
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

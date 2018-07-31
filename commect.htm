@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+
+<h3>初始化</h3>
+
+<div class="submsg">
+<h4><i>string</i> Init( <i>string</i> appid，<i>string</i> id， )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> Appid</th>
+	<td>模块ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> ID</th>
+	<td>记录ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	开始载入模块
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数初始化</p>
+</div>
+
+
+
+
+<h3>新增一条评论</h3>
+
+<div class="submsg">
+<h4><i>string</i> Post( <i>array</i> data，<i>array</i> param )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i> data</th>
+	<td>用户，内容，标题，地址</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>array</i> param</th>
+	<td>参数，内容，文本</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数用于新增一条评论</p>
+</div>
+
+
+
+<h3>获取评论信息</h3>
+
+<div class="submsg">
+<h4><i>string</i> List( <i>array</i> param，<i>array</i> multi， )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> param</th>
+	<td>内容块</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> multi</th>
+	<td>内容块</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>本函数获取评论信息</p>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

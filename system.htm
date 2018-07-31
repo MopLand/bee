@@ -1,0 +1,577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+<h3>获取系统设置</h3>
+
+<div class="submsg">
+<h4>System :: reader_config()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> javascript</th>
+	<td>
+	返回 JavaScript 格式系统设置
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>页面重定向</h3>
+
+<div class="submsg">
+<h4> System :: redirect( <i>string</i> url , <i>string</i> message )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> url</th>
+	<td>目标地址</td>
+	</tr>
+	<tr>
+	<th><i>string</i> msg</th>
+	<td>页面消息</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3>获取系统跨域脚本</h3>
+
+<div class="submsg">
+<h4>System :: cross_domain()</h4>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> javascript</th>
+	<td>
+	返回 JavaScript 格式系统设置
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>处理系统用户登录</h3>
+
+<div class="submsg">
+<h4>System :: admin_login( <i>string</i> username, <i>string</i> password )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>用户名</td>
+	</tr>
+	<tr>
+	<th><i>string</i> password</th>
+	<td>密码，MD5 之后的结果</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3>注册用户 Session</h3>
+<div class="submsg">
+<h4>System :: admin_session( <i>array</i> row )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i> row</th>
+	<td>单条用户数据记录</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3>处理用户登出</h3>
+
+<div class="submsg">
+<h4>System :: admin_logout()</h4>
+</div>
+
+
+<h3>更换用户头像</h3>
+<div class="submsg">
+<h4>System :: admin_avatar( <i>int</i> uid[, <i>string</i> avatar] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>int</i> uid</th>
+	<td>用户 ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> avatar</th>
+	<td>头像图片地址</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> result</th>
+	<td>
+	<em>true:</em>发送成功<br />
+	<em>false:</em>发送失败<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3>更换界面主题</h3>
+<div class="submsg">
+<h4>System :: admin_theme( <i>int</i> uid[, <i>string</i> theme] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>int</i> uid</th>
+	<td>用户 ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> theme</th>
+	<td>主题名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> result</th>
+	<td>
+	<em>true:</em>发送成功<br />
+	<em>false:</em>发送失败<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3>根据权限名称索引符合的用户组</h3>
+<div class="submsg">
+<h4>System :: get_func_gid( <i>string</i> func[, <i>bool</i> join] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>int</i> func</th>
+	<td>权限标识</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> join</th>
+	<td>是否转换成字符串组合</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> result</th>
+	<td>
+	<em>true:</em>发送成功<br />
+	<em>false:</em>发送失败<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3>更换界面主题</h3>
+<div class="submsg">
+<h4>System :: get_user_gid( <i>int</i> uid[, <i>string</i> theme] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>int</i> uid</th>
+	<td>用户 ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> theme</th>
+	<td>主题名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> result</th>
+	<td>
+	<em>true:</em>发送成功<br />
+	<em>false:</em>发送失败<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<h3>登录状态检查</h3>
+<div class="submsg">
+<h4> System :: check_login( [<i>boolean</i> jump] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> jump</th>
+	<td>
+	<em>true:</em>登录后转到本页<br />
+	<em>false:</em>登录后不转到本页<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>页面权限</h3>
+
+<div class="submsg">
+<h4> System :: check_page()</h4>
+
+<br />
+页面权限。
+</div>
+
+
+
+
+<h3>功能权限</h3>
+
+<div class="submsg">
+<h4> System :: check_func( <i>string</i> func [, <i>boolean</i> debug] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> func</th>
+	<td>权限名称</td>
+	</tr>
+	<tr>
+	<th><i>boolean</i> debug</th>
+	<td>
+	<em>true:</em>显示调试信息<br />
+	<em>false:</em>不显示调试信息（默认）<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>检查类是否存在</h3>
+
+<div class="submsg">
+<h4> System :: check_class( <i>string</i> class )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> class</th>
+	<td>类名称</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>检查变量是否为空</h3>
+
+<div class="submsg">
+<h4> System :: check_empty()</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>变量名</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>写入事件到系统日志</h3>
+
+<div class="submsg">
+<h4> System :: insert_event( <i>string</i> event, <i>string</i> start, <i>string</i> last[, <i>string</i> desc] )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> mysql</th>
+	<td>数据连接</td>
+	</tr>
+	<tr>
+	<th><i>string</i> event</th>
+	<td>事件标识</td>
+	</tr>
+	<tr>
+	<th><i>string</i> start</th>
+	<td>发生时间</td>
+	</tr>
+	<tr>
+	<th><i>string</i> last</th>
+	<td>最后更新时间</td>
+	</tr>
+	<tr>
+	<th><i>string</i> desc</th>
+	<td>描述内容</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h3>删除过期系统日志</h3>
+
+<div class="submsg">
+<h4> System :: delete_event( <i>string</i> uid, <i>string</i> event )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uid</th>
+	<td>用户ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> event</th>
+	<td>事件标识</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>邮件发送函数</h3>
+<div class="submsg">
+<h4><i>string</i> System :: sendmail( <i>string</i> subject,<i>string</i> address,<i>string</i> list,<i>string</i> content )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> subject</th>
+	<td>主题</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> address</th>
+	<td>收件人地址</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> list</th>
+	<td>抄送地址，支持多地址抄送，中间用","隔开</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> content</th>
+	<td>邮件内容</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i> result</th>
+	<td>
+	<em>true:</em>发送成功<br />
+	<em>false:</em>发送失败<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>建立错误日志</h3>
+
+<div class="submsg">
+<h4> System :: show_error()</h4>
+<br />
+建立错误日志。
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

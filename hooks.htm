@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+<h3>扫描模块，缓存所有Hock</h3>
+
+<div class="submsg">
+<h4><i>array</i> Module :: hooks_push( <i>Boolean</i> debug = <i>false</i> )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>Boolean</i> debug</th>
+	<td>是否开启调试</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>Array</i></th>
+	<td>
+	已缓存的 Hock 列表（同时保存在全局变量 $HOCKERS 中）
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>扫描相应的钩子文件，存为数组，并将扫描到的信息写入Hock缓存中</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's1')">遍历Hock示例 (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+//遍历 Hock
+Module :: hooks_push( true );
+
+//调试 Hock
+var_dump( $HOCKERS );
+</pre></div>
+
+</div>
+
+
+
+<h3>输出当前 Hock</h3>
+
+<div class="submsg">
+<h4><i>string</i> Module :: hooks_slice( <i>string</i> key )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> key</th>
+	<td>Hock 索引键名</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	当前选择菜单的内容
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<p>将扫描结果中缓存的hock数组进行遍历并输出</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's2')">输出Hock示例 (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+echo Module :: hooks_slice( $key );
+</pre></div>
+
+</div>
+
+
+
+<h3>调用当前模块配置项</h3>
+
+<div class="submsg">
+<h4><i>string</i> Module :: hooks_quick( <i>string</i> appid )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> appid</th>
+	<td>模块名称</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="4"><i>string</i></th>
+	<th><i>string</i> [0]</th>
+	<td>系统菜单</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [1]</th>
+	<td>模块菜单</td>
+	</tr>
+</tbody>
+</table>
+
+<p>根据 appid 调用相应 hock 的模块快捷菜单，如果不 appid 则获取系统的菜单</p>
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's3')">输出当前模块快捷菜单例 (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+echo Module :: hooks_quick( $appid );
+</pre></div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

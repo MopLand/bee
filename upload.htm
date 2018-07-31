@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VeryIDE 应用开发手册 - 用户接口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="VeryIDE." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+
+
+<h3>上传错误消息处理</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.ECode( <i>string</i>  i )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> i </th>
+	<td>内容</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	文件出错消息
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<h6><a href="javascript:void(0);" class="spread" onclick="collapse(this, 's1')">出错消息</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+	var code = {
+		1 : '上传的文件超过了服务器限制的值',
+		2 : '上传文件的大小超过了表单中 MAX_FILE_SIZE 选项指定的值',
+		3 : '文件只有部分被上传，可能为损坏文件',
+		4 : '没有文件被上传，无效或空的文件',
+		5 : '上传的文件是空的（大小为 0）',
+		6 : '找不到临时文件夹，服务器端',
+		7 : '文件写入失败，可能是没有权限'
+	}
+</pre></div>
+</div>
+
+
+
+
+<h3>多文件上传组件</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Multi( <i>string</i> input，<i>string</i> value，<i>string</i> config，<i>string</i> mode )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> value</th>
+	<td>默认值</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> config</th>
+	<td>配置项</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> mode</th>
+	<td>模式：[空] 默认 [extra] 扩展方式</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	文件名，文件地址，文件类型
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>上传文件的扩展名</p>
+
+</div>
+
+
+
+<h3>文件删除</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Multi.Delete( <i>string</i> input，<i>string</i> file )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>该文件</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	true:删除成功，false:删除失败
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>删除文件</p>
+</div>
+
+
+
+<h3>每个上传成功后</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Multi.onUpload( <i>string</i> file，<i>string</i> current，<i>string</i> input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>文件地址</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> current</th>
+	<td>当前索引</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<div class="code">
+<pre>
+	//判断文件是否符合大下
+	if( file.indexOf(".") == -1 ){
+		//alert("上传出错，可能是文件过小");
+		Serv.ECode( file );
+		return;
+	}
+</pre>
+</div>
+</div>
+
+
+
+<h3>全部上传成功后</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Multi.onUploadEnd( <i>string</i> succee，<i>string</i> totality，<i>string</i> input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> succee</th>
+	<td>成功上传数</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> totality</th>
+	<td>全部文件数</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="code">
+<pre>
+	//文件上状态
+	Serv.Multi.onUploadEnd = function( succee , totality , input ){
+						
+		return "已上传 "+succee+" 个，共 "+totality+" 个文件"
+		
+	}
+</pre>
+</div>
+</div>
+
+
+
+
+<h3>单文件上传组件</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload( <i>string</i> input，<i>string</i> value，<i>string</i> config，<i>string</i> mode )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> value</th>
+	<td>默认值</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> config</th>
+	<td>配置项</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> mode</th>
+	<td>模式：[空] 默认 [extra] 扩展方式</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	文件信息
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>单文件上传</p>
+</div>
+
+
+
+
+<h3>保存上传配置</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Data( <i>Object</i> new Object(); )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> Object</th>
+	<td>用于用于保存上传配置</td>
+	</tr>
+</tbody>
+
+</table>
+
+</div>
+
+
+
+
+<h3>调试模式</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Debug( <i>bool</i> false; )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> bool</th>
+	<td>调试模式</td>
+	</tr>
+</tbody>
+
+</table>
+
+</div>
+
+
+
+
+
+<h3>文件保存</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Save( <i>string</i> input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	该文件名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>文件保存</p>
+</div>
+
+
+
+
+
+<h3>文件保存</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Save( <i>string</i> input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	该文件名
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>文件保存</p>
+</div>
+
+
+
+
+
+<h3>文件选择</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Select( <i>string</i> input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	操作结果
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>文件选择</p>
+</div>
+
+
+
+
+
+
+<h3>用户更改输入框值时回调</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Change( <i>string</i>  input，<i>string</i> o )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>实例ID</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> o</th>
+	<td>文件域</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	更改的值
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>用户更改输入框值时回调</p>
+</div>
+
+
+
+
+<h3>构造表单</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Show( <i>string</i>  input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>
+	显示表单
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>构造表单</p>
+</div>
+
+
+
+<h3>上传检查</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Check( <i>string</i>  input，<i>string</i> file )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+<tbody>
+	<tr>
+	<th><i>string</i> file</th>
+	<td>文件域</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	true:文件类型正确，false:文件类型错误
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>上传检查</p>
+</div>
+
+
+
+
+<h3>文件返回</h3>
+
+<div class="submsg">
+<h4><i>string</i> Serv.Upload.Back( <i>string</i>  input )</h4>
+
+<h5>函数参数</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>参数</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> input</th>
+	<td>文件域名称</td>
+	</tr>
+</tbody>
+
+</table>
+
+<h5>返回值</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>值</th>
+	<td>含义</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	true:文件上传成功，false:文件上传成功
+	</td>
+	</tr>
+</tbody>
+</table>
+
+
+<p>上传检查</p>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>
